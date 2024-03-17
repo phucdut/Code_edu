@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy fibonacci</title>
+</head>
+<body>
+<h2 style="color: blue">Dãy fibonacci gồm n số là: </h2>
+
+</body>
+</html>
+<script>
+    const n = parseInt(prompt('Enter a positive number: '));
+    let n1 = 0, n2 = 1, nextTerm;
+
+    console.log('Fibonacci Series:');
+    console.log(n1); // print 0
+    document.write(n1 + "  ");
+    console.log(n2); // print 1
+    document.write(n2 + "  ");
+    nextTerm = n1 + n2;
+
+    while (nextTerm <= n) {
+
+        // print the next term
+        console.log(nextTerm);
+        document.write("   " + nextTerm)
+        n1 = n2;
+        n2 = nextTerm;
+        nextTerm = n1 + n2;
+    }
+
+</script>

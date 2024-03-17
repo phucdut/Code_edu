@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/ThucHanh1_TraLoiCauHoi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ThucHanh2_LuyenTapToanTu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ThucHanh3_CauTruc_if_else" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ThucHanh4_LuyenTapSwitch_Case" vcs="Git" />
+  </component>
+</project>

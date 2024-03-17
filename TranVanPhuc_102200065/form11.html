@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form11: Đăng nhập</title>
+    <script language="JavaScript">
+        function kiemTraDangNhap()
+        {
+            var t1 = document.form1.Username.value;
+            var t2 = document.form1.Password.value;
+            if(t1 == "" && t2 == "")
+            {
+                alert("Không được để trống username và password");
+            }
+            else if(t1=="")
+            {
+                alert("Không được để trống username");
+            }
+            else if(t2 == "")
+            {
+                alert("Không được để trống password");
+            }else{
+                alert("username và password là: " + t1 + "   ,   " + t2)
+            }
+
+        }
+        function resetText()
+        {
+            document.form1.Username.value = "";
+            document.form1.Password.value = "";
+        }
+    </script>
+</head>
+<body style="background-color: #33FF66;">
+<div  style="font-size: larger; position: absolute; top: 50% ;left: 50% ; transform: translate(-50%, -50%)">
+    <form action="form1.html" name="form1" method="post">
+        <table border="0" style="background-color: #33FF66;" align="center">
+            <tr>
+                <th colspan="2">Login</th>
+            </tr>
+            <Tr>
+                <td>
+                    <p>Username</p>
+                </td>
+                <td>
+                    <input type="text" name="Username" value="" >
+                </td>
+            </Tr>
+            <Tr>
+                <td>
+                    <p>Password</p>
+                </td>
+                <td>
+                    <input type="password" name="Password" value="" size="20" >
+                </td>
+            </Tr>
+            <Tr>
+                <td></td>
+                <td>
+                    <button name="btnOk" value="ok" type="button" onclick="kiemTraDangNhap()">OK</button>
+                    <button name="btnReset" value="Reset" type="button" onclick="resetText()">Reset</button>
+                </td>
+            </Tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

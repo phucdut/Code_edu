@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 4: Đổi màu</title>
+    <script language="JavaScript">
+        function doimau() {
+            let input = document.f1.t1.value;
+            document.bgColor =  input;
+        }
+    </script>
+</head>
+<body>
+    <div  style="font-size: larger; position: absolute; top: 50% ;left: 50% ; transform: translate(-50%, -50%); font-size: 25px">
+        <form name="f1" method="post" action="doimau.php">
+            <input type="text" name="t1">
+            <input type="button" name="b1" value="OK" onclick="doimau()">
+        </form>
+    </div>
+</body>
+</html>

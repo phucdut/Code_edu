@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chữ</title>
+</head>
+<body>
+<form name=f1 method="post/get" action="xulidmau.jsp">
+    <input type=text name=t1 value="" onblur="Doichu()">
+    <input type=text name=t2 value="">
+
+</form>
+</body>
+</html>
+<script language="Javascript">
+    function Doichu()
+    {
+        var chu=document.f1.t1.value
+        document.f1.t2.value=chu.toUpperCase()
+    }
+</script>

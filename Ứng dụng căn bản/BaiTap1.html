@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien Thi Hinh Chu Nhat</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+</body>
+</html>
+<script>
+    const CANVAS = document.getElementById("myCanvas");
+    const CONTEXT = CANVAS.getContext("2d");
+
+    // CANVAS.width = window.innerWidth;
+    // CANVAS.height = window.innerHeight;
+    class Rectangle{
+        constructor(width, height, x, y) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+        setX(x){
+            this.x = x;
+        }
+        getY(){
+            return this.x;
+        }
+        setY(y){
+            this.y = y;
+        }
+        getY(){
+            return this.y;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
+        getWidth(){
+            return this.width;
+        }
+        setHeight(height){
+            this.height = height;
+        }
+        getHeight(){
+            return this.height;
+        }
+        getArea() {
+            let are = this.height * this.width;
+            return console.log("Dien tich hinh chu nhat la:" + are);
+        }
+        getPerimeter() {
+            let perimeter = (this.height + this.width) * 2;
+            return console.log("Chu vi hinh chu nhat la:" + perimeter);
+        }
+        getCanVas1(){
+            CONTEXT.fillRect(this.x, this.y, this.width, this.height)
+        }
+        getCanVas2(){
+            CONTEXT.strokeRect(this.x, this.y, this.width, this.height)
+        }
+        getCanVas3(){
+            CONTEXT.clearRect(this.x, this.y, this.width, this.height)
+        }
+    }
+    let myRectangle = new Rectangle(400, 200, 20, 10);
+    myRectangle.getCanVas1();
+    // let myRectangle2 = new Rectangle(300, 200, 50, 30);
+    // myRectangle2.getCanVas2();
+    // let myRectangle3 = new Rectangle(100, 200, 10, 20);
+    // myRectangle3.getCanVas3();
+    let myRectangle4 = new Rectangle(400, 200);
+    myRectangle4.getArea();
+    myRectangle4.getPerimeter();
+</script>

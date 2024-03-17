@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi màu</title>
+</head>
+<body>
+<form name=f1 method="post/get" action="xulidmau.jsp">
+<input type=text name=t1 value="">
+<input type=button name=b1 value="OK" onclick="Doimau()">
+</form>
+</body>
+</html>
+<script language="Javascript">
+    function Doimau()
+    {
+        var mau="Blue"
+        //var mau=document.f1.t1.value
+        document.bgColor=mau
+    }
+</script>

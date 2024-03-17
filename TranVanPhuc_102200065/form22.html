@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="Javascript">
+        function addPrice(amount)
+        {
+            with(this) {
+                price = amount;
+            }
+        }
+        function Book (title, author, content, details)
+        {
+            this.title = title;
+            this.author = author;
+            this.content = content;
+            this.price = 0;
+            this.details = details;
+            this.addPrice = addPrice;
+        }
+    </script>
+</head>
+<body>
+<div style="font-size: larger; position: absolute; top: 33% ;left: 35% ; transform: translate(-50%, -50%)">
+    <script lang="Javascript">
+        let myBook = new Book("Javascript", "Trần Văn Phúc","Lập trình căn bản",
+            "Lập trình hướng đối tượng (tiếng Anh: Object-oriented programming, viết tắt: OOP) là một mẫu hình lập trình dựa trên khái niệm \"công nghệ đối tượng\", mà trong đó, đối tượng chứa đựng các dữ liệu, trên các trường, thường được gọi là các thuộc tính; và mã nguồn, được tổ chức thành các phương thức. Phương thức giúp cho đối tượng có thể truy xuất và hiệu chỉnh các trường dữ liệu của đối tượng khác, mà đối tượng hiện tại có tương tác (đối tượng được hỗ trợ các phương thức \"this\" hoặc \"self\"). Trong lập trình hướng đối tượng, chương trình máy tính được thiết kế bằng cách tách nó ra khỏi phạm vi các đối tượng tương tác với nhau.[1][2] Ngôn ngữ lập trình hướng đối tượng khá đa dạng, phần lớn là các ngôn ngữ lập trình theo lớp, nghĩa là các đối tượng trong các ngôn ngữ này được xem như thực thể của một lớp, được dùng để định nghĩa một kiểu dữ liệu.");
+        myBook.addPrice(350);
+        document.write("Book title is : "+ myBook.title + "<br>");
+        document.write("Book author is :"+ myBook.author + "<br>");
+        document.write("Book content is : "+ myBook.content + "<br>");
+        document.write("Book price is : "+ myBook.price + "<br>");
+        document.write("Book details is : "+ myBook.details + "<tr>");
+    </script>
+</div>
+</body>
+</html>

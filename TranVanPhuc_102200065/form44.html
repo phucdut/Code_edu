@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiểm tra giá trị</title>
+
+</head>
+<body onLoad="document.form44.txtBox.focus()" style="background-color: bisque">
+<div  style="font-size: larger; position: absolute; top: 50% ;left: 50% ; transform: translate(-50%, -50%); font-size: 25px; text-align: center">
+    <form name="form44" >
+        <h3>Kiểm tra giá trị Index</h3>
+        <select name="lstBox">
+            <option>Index 0</option>
+            <option>Index 1</option>
+            <option>Index 2</option>
+            <option>Index 3</option>
+        </select>
+        <input type="text" name="txtBox" size=5>
+        <input type="button" value="Click" onClick="SelectID()">
+    </form>
+</div>
+</body>
+</html>
+<script language="JavaScript">
+    function SelectID()
+    {
+        var s=document.form44.txtBox.value
+        document.form44.lstBox.selectedIndex=s
+        document.form44.txtBox.focus()
+    }
+</script>

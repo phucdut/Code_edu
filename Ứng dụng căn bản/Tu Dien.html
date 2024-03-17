@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Dictionary</h1>
+<input type="text" id="eng">
+<button id="translate">Translate</button>
+<p id="vie"></p>
+
+<script>
+  document.getElementById('translate').onclick =
+          function translate() {
+            let arrEng = ['one', 'two', 'three'];
+            let arrVie = ['một', 'hai', 'ba'];
+            let eng = document.getElementById('eng').value;
+
+            for (let key in arrEng) {
+              console.log('key =', key)
+              console.log('arrEng[key] ==', arrEng[key])
+              if (eng == arrEng[key]) {
+                document.getElementById('vie').innerText = arrVie[key];
+                break;
+              } else {
+                document.getElementById('vie').innerText = 'Not Found';
+              }
+            }
+          }
+</script>
+</body>
+
+</html>

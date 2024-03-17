@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng căn bản</title>
+    <script src=".idea/abc.js"></script>
+
+</head>
+<body>
+<h3> Add new Product</h3>
+<div>
+    <input type="text" name="newProduct" id="newProduct" placeholder="New Product" />
+    <button onclick="addProduct()">Add</button>
+</div>
+<br>
+<br>
+<div>
+    <strong>Display All Product</strong>
+    <span id="productTable"></span>
+</div>
+</body>
+</html>
+<script>
+    let a = 2 + 5+ "8";
+    console.log(a);
+    let productList = [
+        'Sony Xperia',
+        'Samsung Galaxy',
+        'Nokia 6',
+    ];
+    function showTable(){
+        let length = productList.length;
+        let data = `<table border='1' cellspacing='0' cellpadding='3'>
+                <tr>
+                <th> # </th>
+                <th> Product Name </th>
+                <th colspan="2">${length} Products </th>
+</tr>`;
+        for(let i = 0; i < length; i++){
+            let stt = i + 1;
+            let edit = `<button onclick=""> Edit </button>`;
+            let deleteB =  `<button onclick=""> Delete </button>`;
+            data +=`
+            <tr>
+            <th> ${stt} </th>
+            <th> ${productList[i]} </th>
+            <th> ${edit}</th>
+            <th> ${deleteB}</th>
+            </tr>`;
+        }
+        data += `</table>`;
+        document.getElementById('productTable').innerHTML = data;
+    }
+    showTable();
+function AddProduct(index){
+    let newProduct = prompt("Nhập sản phẩm cần thêm");
+    if( newProduct === ''){
+        return;
+    }
+    productList.push(newProduct);
+    showTable();
+}
+</script>

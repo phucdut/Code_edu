@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 5: Chuyển chữ thường thành chữ in hoa</title>
+    <script language="JavaScript">
+        function inhoa() {
+            let input = document.f1.t1.value;
+            input = input.toUpperCase();
+            document.f1.t2.value = input;
+        }
+    </script>
+</head>
+<body>
+    <div  style="font-size: larger; position: absolute; top: 50% ;left: 50% ; transform: translate(-50%, -50%); font-size: 25px">
+        <form name="f1" method="post" action="xulychu.php">
+            <input type="text" name="t1" onblur="inhoa()">
+            <input type="text" name="t2">
+        </form>
+    </div>
+</body>
+</html>

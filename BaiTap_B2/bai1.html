@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLPB_VS1</title>
+</head>
+<body>
+<?php
+
+        $servername = "localhost";
+        $username = "root";
+        $password ="";
+        $database ="qlnv_s1";
+        $conn = mysqli_connect($servername,$username,$password,$database);
+
+        $sql="Select * from nhanvien";
+        $query=mysqli_query($conn,$sql);
+        $result= $conn->query($sql);
+    echo '<table border = "1" width = "100%">';
+    echo '<caption> Dữ liệu bảng Nhân Viên</caption>';
+    echo '<TR><TH> Mã nhân viên</TH><TH>Tên nhân viên</TH><TH>ID phòng ban</TH><TH>Địa chỉ</TH>';
+        if ($result->num_rows > 0)
+        {
+        while($row = $result->fetch_assoc()) {
+        echo '<TR><TD>'.$row["IDNV"] .'</TD><TD>'.$row["Ho_Ten"].'</TD><TD>'.$row["IDPB"]. '</TD><TD>'. $row["DIa_Chi"] .'</TD></TR>';
+    }
+    }
+    $conn->close();
+    ?>
+</body>
+</html>

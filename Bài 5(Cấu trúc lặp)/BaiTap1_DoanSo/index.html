@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game doan so</title>
+</head>
+<body>
+<h1>Hãy thử đoán xem 1 số từ 1 - 10 , có 3 lần đoán</h1>
+<input type="number" id="number"/>
+<button id="btn" onclick="doanSo()">Đoán xem</button>
+<p id="random" style="color: black"></p>
+<p id="count" style="color: red"></p>
+<script>
+    let count = 3;
+    let display = document.getElementById('display');
+    let check;
+    function doanSo() {
+        document.getElementById('btn').innerHTML = 'Đoán tiếp';
+        let number = document.getElementById('number').value;
+        let random = Math.floor(Math.random() * 10 + 1);
+        document.getElementById('random').innerHTML = 'Số trúng thưởng là : ' + random;
+        if (number == random && count > 0) {
+            alert('Bạn đã đoán đúng')
+            check = prompt("Bạn có muốn chơi tiếp không:")
+            if(check == 'Có'){
+                document.getElementById('btn').innerHTML = 'Đoán tiếp';
+                document.getElementById('number').value = ' ';
+                count = 3;
+            }else if(check == 'Không'){
+                alert("Bạn đã đoán xong xin mời thoái")
+            }
+
+        } else {
+            count--
+        }
+        if (count == 0){
+            document.getElementById('count').innerHTML = 'Bạn đã hết lượt chơi rồi'
+            check = prompt("Bạn có muốn chơi tiếp không:")
+            if(check == 'Có'){
+                document.getElementById('btn').innerHTML = 'Đoán tiếp';
+                document.getElementById('number').value = ' ';
+                count = 3;
+            }else if(check == 'Không'){
+                alert("Bạn đã đoán xong xin mời thoái")
+            }
+        }
+        document.getElementById('count').innerHTML = 'Số lượt chơi còn lại là : ' + count;
+
+    }
+</script>
+</body>
+</html>

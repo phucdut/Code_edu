@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<button onclick="style1()">bấm</button>-->
+<!--<p style="color: aqua" id="test">Trần Văn Phúc </p>-->
+<h1 style="color: brown"> 1. Bắt sự kiện onclick bằng hàm function</h1>
+<h1 onclick="batSuKien()" style="color: blueviolet">  hay click vào đây </h1>
+<h1> 2. Bắt sự kiện bằng myClick </h1>
+<h1 id="myClick"> Hãy click vào tôi đi 1</h1>
+<h1 id="myClick2"> Hãy click vào tôi 2 </h1>
+
+<h1 style="color: darkgreen"> 3. Bắt sự kiện chuột bằng oneChange</h1>
+<h2> cach 1. Bắt thông qua myChange</h2>
+<select id="myChange" onchange="Change()">
+    <option value="phúc"> Văn Phúc </option>
+    <option value="hữu"> Văn Hữu </option>
+    <option value="Hào"> Van Hao</option>
+</select>
+
+<h2> cach 2. Bắt thông qua key "change" trong addEventListener</h2>
+<select id="myChange2">
+    <option value="phúc"> Văn Phúc </option>
+    <option value="Huy"> Văn Huy </option>
+    <option value="Hưng"> Van Hưng</option>
+</select>
+</body>
+</html>
+<script>
+    // function style1(){
+    //   let  test = document.getElementById('test');
+    //     test.style.color = 'blue';
+    // }
+
+
+    // Bắt sự kiện onclick
+    function batSuKien(){
+        document.write("Đúng rồi")
+    }
+    let MyClick = document.getElementById("myClick");
+    MyClick.addEventListener('click', batSuKien);
+    // cách 2
+    let myClick2 = document.getElementById('myClick2').onclick = batSuKien;
+
+    //3. Bắt sự kiện chuột bằng oneChange
+    //cach 1. Bắt thông qua myChange
+
+    function Change(){
+        let myChange1 = document.getElementById('myChange').value;
+        document.write(myChange1);
+    }
+
+    // cach 2. Bắt thông qua key "change" trong addEventListener
+    let myChange2 = document.getElementById("myChange2");
+    myChange2.addEventListener('change', Change2 );
+    function  Change2(){
+        let duMa = document.getElementById('myChange2').value;
+        alert(duMa);
+    }
+
+
+
+
+</script>

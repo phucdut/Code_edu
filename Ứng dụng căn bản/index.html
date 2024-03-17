@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng căn bản</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+
+        tr:nth-child(1) {
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<h1>BASIC CRUD</h1>
+<div>
+    <div>
+        <strong>Add New Product</strong>
+    </div>
+    <div>
+        <input type="text" name="newProduct" id="newProduct" placeholder="New Product" />
+        <button onclick="addProduct()">Add</button>
+    </div>
+    <br>
+    <div>
+        <div>
+            <strong>Display All Product</strong>
+            <span id="productTable"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    let productList = [
+        'Sony Xperia',
+        'Samsung Galaxy',
+        'Nokia 6',
+    ];
+
+    //create
+    function addProduct() {
+        let newProduct = document.getElementById('newProduct').value;
+        if (newProduct === '') return;
+        productList.push(newProduct);
+        showProduct();
+    }
+
+    //read
+    function showProduct() {
+        let productListLength = productList.length;
+        let data = `<table border='1' cellspacing='0' cellpadding='3'>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th colspan="2">${productListLength} Products</th>
+                </tr>`;
+        for (let i = 0; i < productListLength; i++) {
+            let stt = i + 1;
+            let editBtn = `<button onclick="editProduct(${i})">Edit</button>`;
+            let deleteBtn = `<button onclick="deleteProduct(${i})">Delete</button>`;
+            data += `<tr>
+                    <td>${stt}</td>
+                    <td>${productList[i]}</td>
+                    <td>${editBtn}</td>
+                    <td>${deleteBtn}</td>
+                </tr>`
+        }
+        data += `</table>`
+        document.getElementById('productTable').innerHTML = data;
+    }
+    showProduct();
+
+    //update
+    function editProduct(index) {
+        let newProduct = prompt('New product name is:');
+        productList[index] = newProduct;
+        showProduct();
+    }
+
+    //delete
+    function deleteProduct(index) {
+        productList.splice(index, 1);
+        showProduct()
+    }
+</script>

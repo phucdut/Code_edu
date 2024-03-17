@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dổi chữ</title>
+</head>
+<body  onLoad="document.f1.t1.focus()" style="background-color: bisque;">
+<div  style="font-size: larger; position: absolute; top: 50% ;left: 50% ; transform: translate(-50%, -50%); font-size: 25px; text-align: center">
+    <form name = "f1" method="post" action="xulimau.jsp">
+        <h3> Đổi chữ thường thành chữ in hoa</h3>
+        <input type="text" name = "t1" value="" onblur="vietHoa()">
+        <input type="text" name = "t2" value="">
+    </form>
+</div>
+</body>
+</html>
+<script lang="Javascrip">
+    function vietHoa()
+    {
+        var text = document.f1.t1.value;
+        var i=0;
+        var character='';
+        var r = "";
+        while (i <= text.length){
+            character = text.charAt(i);
+            if (character == character.toUpperCase()) {
+                r += character.toLowerCase();
+            }
+            else
+                r += character.toUpperCase();
+            i++;
+        }
+        document.f1.t2.value = r;
+    }
+</script>
